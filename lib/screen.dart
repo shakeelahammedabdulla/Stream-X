@@ -37,15 +37,14 @@ class _HomePageState extends State<HomePage> {
         ),
         backgroundColor: Colors.black,
       ),
-          body: Container(
+      body: Container(
         decoration: const BoxDecoration(
           gradient: LinearGradient(
             begin: Alignment.topCenter,
             end: Alignment.bottomCenter,
             colors: [
-              Colors.deepPurpleAccent,
-              Colors.purple,
-              Colors.deepPurple,
+              Colors.white,
+              Colors.blue,
             ],
           ),
         ),
@@ -56,191 +55,212 @@ class _HomePageState extends State<HomePage> {
               child: SingleChildScrollView(
                 child: Center(
                   child: Padding(
-            padding:
-                const EdgeInsets.symmetric(horizontal: 20, vertical: 40),
-            child: Column(
-              mainAxisAlignment: MainAxisAlignment.center,
-              children: [
-                Image.asset(
-                  'assets/images/coder1.png',
-                  width: 250,
-                  height: 200,
-                ),
-                const SizedBox(height: 20),
-                const Text(
-                  "Stream-X Life Changing Memories",
-                  style: TextStyle(
-                    fontWeight: FontWeight.bold,
-                    color: Colors.white,
-                    fontSize: 15,
-                  ),
-                ),
-                const SizedBox(height: 30),
-                SingleChildScrollView(
-                  child: Row(
-                    mainAxisAlignment: MainAxisAlignment.center,
-                    crossAxisAlignment: CrossAxisAlignment.center,
-                    children: [
-                      Expanded(
-                        child: TextFormField(
-                          controller: conferenceDTextCtrl1,
-                          style: const TextStyle(
-                            color: Colors.deepPurpleAccent,
-                            fontSize: 16,
-                          ),
-                          decoration: InputDecoration(
-                            hintText: "Enter Name",
-                            hintStyle: const TextStyle(
-                              color: Colors.deepPurpleAccent,
-                              fontSize: 18,
-                              fontWeight: FontWeight.bold,
-                            ),
-                            border: OutlineInputBorder(
-                              borderRadius: BorderRadius.circular(10),
-                              borderSide: const BorderSide(
-                                color: Colors.transparent,
-                                width: 2,
-                              ),
-                            ),
-                            enabledBorder: OutlineInputBorder(
-                              borderRadius: BorderRadius.circular(10),
-                              borderSide: const BorderSide(
-                                color: Colors.transparent,
-                                width: 2,
-                              ),
-                            ),
-                            focusedBorder: OutlineInputBorder(
-                              borderRadius: BorderRadius.circular(10),
-                              borderSide: const BorderSide(
-                                color: Colors.transparent,
-                                width: 2,
-                              ),
-                            ),
-                            filled: true,
-                            fillColor: Colors.white,
-                            contentPadding: const EdgeInsets.symmetric(
-                              vertical: 16,
-                              horizontal: 20,
-                            ),
-                          ),
+                    padding:
+                        const EdgeInsets.symmetric(horizontal: 20, vertical: 40),
+                    child: Column(
+                      mainAxisAlignment: MainAxisAlignment.center,
+                      children: [
+                        Image.asset(
+                          'assets/images/coder1.png',
+                          width: 250,
+                          height: 200,
                         ),
-                      ),
-                    ],
-                  ),
-                ),
-                const SizedBox(height: 20),
-                SingleChildScrollView(
-                  child: Row(
-                    mainAxisAlignment: MainAxisAlignment.center,
-                    crossAxisAlignment: CrossAxisAlignment.center,
-                    children: [
-                      Expanded(
-                        child: TextFormField(
-                          controller: conferenceDTextCtrl,
-                          style: const TextStyle(
-                            color: Colors.deepPurpleAccent,
-                            fontSize: 16,
-                          ),
-                          obscureText: true,
-                          decoration: InputDecoration(
-                            labelText: "Join a conference by ID",
-                            labelStyle: const TextStyle(
-                              color: Colors.deepPurpleAccent,
-                              fontSize: 18,
-                              fontWeight: FontWeight.bold,
-                            ),
-                            floatingLabelBehavior: FloatingLabelBehavior.never,
-                            border: OutlineInputBorder(
-                              borderRadius: BorderRadius.circular(10),
-                              borderSide: const BorderSide(
-                                color: Colors.transparent,
-                                width: 2,
-                              ),
-                            ),
-                            enabledBorder: OutlineInputBorder(
-                              borderRadius: BorderRadius.circular(10),
-                              borderSide: const BorderSide(
-                                color: Colors.transparent,
-                                width: 2,
-                              ),
-                            ),
-                            focusedBorder: OutlineInputBorder(
-                              borderRadius: BorderRadius.circular(10),
-                              borderSide: const BorderSide(
-                                color: Colors.transparent,
-                                width: 2,
-                              ),
-                            ),
-                            filled: true,
-                            fillColor: Colors.white,
-                            contentPadding: const EdgeInsets.symmetric(
-                              vertical: 16,
-                              horizontal: 20,
-                            ),
-                          ),
-                        ),
-                      ),
-                      const SizedBox(width: 10),
-                      ElevatedButton(
-                        onPressed: () {
-                          if (conferenceDTextCtrl.text.isEmpty ||
-                              conferenceDTextCtrl1.text.isEmpty) {
-                            Navigator.push(
-                              context,
-                              MaterialPageRoute(builder: (context) {
-                                return const NewPage();
-                              }),
-                            );
-                          } else {
-                            Navigator.push(
-                              context,
-                              MaterialPageRoute(builder: (context) {
-                                return VideoConferencePage(
-                                  conferenceID: conferenceDTextCtrl.text,
-                                );
-                              }),
-                            );
-                          }
-                        },
-                        style: ElevatedButton.styleFrom(
-                          primary: const Color(0xFF4C006B),
-                          onPrimary: Colors.white,
-                          padding: const EdgeInsets.symmetric(
-                            vertical: 16,
-                            horizontal: 24,
-                          ),
-                          shape: RoundedRectangleBorder(
-                            borderRadius: BorderRadius.circular(10),
-                          ),
-                        ),
-                        child: const Text(
-                          "Join",
+                        const SizedBox(height: 20),
+                        const Text(
+                          "Stream-X Life Changing Memories",
                           style: TextStyle(
-                            fontSize: 16,
                             fontWeight: FontWeight.bold,
+                            color: Colors.black87,
+                            fontSize: 12,
                           ),
                         ),
-                      ),
-                    ],
+                        const SizedBox(height: 30),
+                        SingleChildScrollView(
+                          child: Row(
+                            mainAxisAlignment: MainAxisAlignment.center,
+                            crossAxisAlignment: CrossAxisAlignment.center,
+                            children: [
+                              Expanded(
+                                child: TextFormField(
+                                  controller: conferenceDTextCtrl1,
+                                  style: const TextStyle(
+                                    color: Colors.deepPurpleAccent,
+                                    fontSize: 16,
+                                  ),
+                                  decoration: InputDecoration(
+                                    hintText: "Enter Name",
+                                    hintStyle: const TextStyle(
+                                      color: Colors.deepPurpleAccent,
+                                      fontSize: 18,
+                                      fontWeight: FontWeight.bold,
+                                    ),
+                                    border: OutlineInputBorder(
+                                      borderRadius: BorderRadius.circular(10),
+                                      borderSide: const BorderSide(
+                                        color: Colors.transparent,
+                                        width: 2,
+                                      ),
+                                    ),
+                                    enabledBorder: OutlineInputBorder(
+                                      borderRadius: BorderRadius.circular(10),
+                                      borderSide: const BorderSide(
+                                        color: Colors.transparent,
+                                        width: 2,
+                                      ),
+                                    ),
+                                    focusedBorder: OutlineInputBorder(
+                                      borderRadius: BorderRadius.circular(10),
+                                      borderSide: const BorderSide(
+                                        color: Colors.transparent,
+                                        width: 2,
+                                      ),
+                                    ),
+                                    filled: true,
+                                    fillColor: Colors.white,
+                                    contentPadding: const EdgeInsets.symmetric(
+                                      vertical: 16,
+                                      horizontal: 20,
+                                    ),
+                                  ),
+                                ),
+                              ),
+                            ],
+                          ),
+                        ),
+                        const SizedBox(height: 20),
+                        SingleChildScrollView(
+                          child: Row(
+                            mainAxisAlignment: MainAxisAlignment.center,
+                            crossAxisAlignment: CrossAxisAlignment.center,
+                            children: [
+                              Expanded(
+                                child: TextFormField(
+                                  controller: conferenceDTextCtrl,
+                                  style: const TextStyle(
+                                    color: Colors.deepPurpleAccent,
+                                    fontSize: 16,
+                                  ),
+                                  obscureText: true,
+                                  decoration: InputDecoration(
+                                    labelText: "Join a conference by ID",
+                                    labelStyle: const TextStyle(
+                                      color: Colors.deepPurpleAccent,
+                                      fontSize: 18,
+                                      fontWeight: FontWeight.bold,
+                                    ),
+                                    floatingLabelBehavior: FloatingLabelBehavior.never,
+                                    border: OutlineInputBorder(
+                                      borderRadius: BorderRadius.circular(10),
+                                      borderSide: const BorderSide(
+                                        color: Colors.transparent,
+                                        width: 2,
+                                      ),
+                                    ),
+                                    enabledBorder: OutlineInputBorder(
+                                      borderRadius: BorderRadius.circular(10),
+                                      borderSide: const BorderSide(
+                                        color: Colors.transparent,
+                                        width: 2,
+                                      ),
+                                    ),
+                                    focusedBorder: OutlineInputBorder(
+                                      borderRadius: BorderRadius.circular(10),
+                                      borderSide: const BorderSide(
+                                        color: Colors.transparent,
+                                        width: 2,
+                                      ),
+                                    ),
+                                    filled: true,
+                                    fillColor: Colors.white,
+                                    contentPadding: const EdgeInsets.symmetric(
+                                      vertical: 16,
+                                      horizontal: 20,
+                                    ),
+                                  ),
+                                ),
+                              ),
+                              const SizedBox(width: 10),
+                              ElevatedButton(
+                                onPressed: () {
+                                  if (conferenceDTextCtrl.text.isEmpty ||
+                                      conferenceDTextCtrl1.text.isEmpty) {
+                                    Navigator.push(
+                                      context,
+                                      MaterialPageRoute(builder: (context) {
+                                        return const NewPage();
+                                      }),
+                                    );
+                                  } else {
+                                    Navigator.push(
+                                      context,
+                                      MaterialPageRoute(builder: (context) {
+                                        return VideoConferencePage(
+                                          conferenceID: conferenceDTextCtrl.text,
+                                        );
+                                      }),
+                                    );
+                                  }
+                                },
+                                style: ElevatedButton.styleFrom(
+                                  primary: const Color(0xFF4C006B),
+                                  onPrimary: Colors.white,
+                                  padding: const EdgeInsets.symmetric(
+                                    vertical: 16,
+                                    horizontal: 24,
+                                  ),
+                                  shape: RoundedRectangleBorder(
+                                    borderRadius: BorderRadius.circular(10),
+                                  ),
+                                ),
+                                child: const Text(
+                                  "Join",
+                                  style: TextStyle(
+                                    fontSize: 16,
+                                    fontWeight: FontWeight.bold,
+                                  ),
+                                ),
+                              ),
+                            ],
+                          ),
+                        ),
+                      ],
+                    ),
                   ),
                 ),
-              ],
+              ),
             ),
-          ),
+          ],
         ),
       ),
+      bottomNavigationBar: BottomAppBar(
+        color: Colors.black,
+        child: Row(
+          mainAxisAlignment: MainAxisAlignment.center,
+          children: [
+            IconButton(
+              icon: Icon(Icons.home, color: Colors.white),
+              onPressed: () {
+                // Handle home button press
+              },
             ),
-          ]
-          ),
-    ),
-    
+            IconButton(
+              icon: Icon(Icons.search, color: Colors.white),
+              onPressed: () {
+                // Handle search button press
+              },
+            ),
+            IconButton(
+              icon: Icon(Icons.settings, color: Colors.white),
+              onPressed: () {
+                // Handle settings button press
+              },
+            ),
+          ],
+        ),
+      ),
     );
   }
 }
-
-
-
-
 
 class VideoConferencePage extends StatelessWidget {
   final String conferenceID;

@@ -7,7 +7,7 @@ class NewPage extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: const Text("404 Page !"),
+        title: const Text("Stream X"),
         leading: Image.asset(
           'assets/images/appbar.png',
           scale: 5,
