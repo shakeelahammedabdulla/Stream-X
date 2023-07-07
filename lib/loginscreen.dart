@@ -1,5 +1,6 @@
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
+import 'package:stream/homescreen.dart';
 
 class LoginPage extends StatefulWidget {
   const LoginPage({Key? key}) : super(key: key);
@@ -9,18 +10,53 @@ class LoginPage extends StatefulWidget {
 }
 
 class _LoginPageState extends State<LoginPage> {
-
-
   final emailController = TextEditingController();
   final passwordController = TextEditingController();
-  
 
   void signUserIn() async {
-    await FirebaseAuth.instance.signInWithEmailAndPassword(
-      email: emailController.text,
-      password: passwordController.text,
-    );
+    try {
+      await FirebaseAuth.instance.signInWithEmailAndPassword(
+        email: emailController.text,
+        password: passwordController.text,
+      );
+
+      // User signed in successfully, navigate to the home screen
+      Navigator.of(context).pushReplacement(
+        MaterialPageRoute(
+          builder: (context) => const HomePage(),
+        ),
+      );
+
+
+    } catch (e) {
+      final snackBar = SnackBar(
+        content: Container(
+          padding: const EdgeInsets.symmetric(vertical: 1.0),
+          child: const Row(
+            children: [
+             SizedBox(width: 5.0),
+              Expanded(
+                child: Text(
+                  'Error: Please enter a valid username and password',
+                  style: TextStyle(
+                    color: Colors.white,
+                    fontSize: 16.0,
+                  ),
+                ),
+              ),
+            ],
+          ),
+        ),
+        backgroundColor: const Color.fromARGB(221, 32, 30, 30),
+        duration: const Duration(seconds: 3),
+      );
+
+      ScaffoldMessenger.of(context).showSnackBar(snackBar);
+    }
   }
+
+
+  
 
   @override
   Widget build(BuildContext context) {
@@ -92,7 +128,7 @@ class _LoginPageState extends State<LoginPage> {
     required bool obscureText,
     required IconData prefixIcon,
     required Color prefixIconColor,
-  }) {
+  }){
     return TextField(
       controller: controller,
       obscureText: obscureText,
@@ -137,22 +173,3 @@ class _LoginPageState extends State<LoginPage> {
     );
   }
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
